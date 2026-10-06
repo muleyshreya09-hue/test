@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CreatorSetu | Content Strategy Advisor</title>
+	<meta name="description" content="Get tailored content strategy suggestions for your creator journey with CreatorSetu.">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<main class="page">
+		<header class="page__nav">
+			<div class="page__brand">
+				<img class="brand-logo brand-logo--dashboard" src="logo_transparent.png" alt="CreatorSetu Logo">
+			</div>
+			<nav class="page__links" aria-label="Primary">
+				<a href="index.html">Dashboard</a>
+				<a href="earnings.html">Earnings</a>
+				<a href="budget.html">Budget</a>
+				<a href="strategy.html" class="is-active" aria-current="page">Strategy</a>
+				<a href="community.html">Community</a>
+				<a href="kredit.html" class="kredit-nav-link"><span class="kredit-icon">₹</span> Kredit</a>
+			</nav>
+			<button class="mobile-menu-toggle" data-mobile-menu-toggle aria-label="Toggle mobile menu" aria-expanded="false">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+			<nav class="mobile-nav-menu" data-mobile-nav-menu aria-label="Mobile navigation">
+				<a href="index.html">Dashboard</a>
+				<a href="earnings.html">Earnings</a>
+				<a href="budget.html">Budget</a>
+				<a href="strategy.html" class="is-active" aria-current="page">Strategy</a>
+				<a href="community.html">Community</a>
+				<a href="kredit.html">Kredit</a>
+			</nav>
+			<div class="dashboard__profile" aria-label="Profile">
+				<span>AK</span>
+			</div>
+		</header>
+
+		<section class="page__intro">
+			<p class="eyebrow">Content strategy advisor</p>
+			<h1>Plan content that grows your world</h1>
+			<p class="page__lead">Tell us how you create, and get a fresh set of inspiring, platform-aware ideas to keep your calendar full and your audience hooked.</p>
+		</section>
+
+		<section class="content-grid content-grid--advisor">
+			<div class="panel-card">
+				<div class="panel-card__header">
+					<h2>Your setup</h2>
+					<p>Tune the advisor to match how you create.</p>
+				</div>
+				<form class="stack-form" data-strategy-form novalidate>
+					<label class="field">
+						<span>Platform</span>
+						<select name="platform" data-strategy-input>
+							<option>Instagram</option>
+							<option>YouTube</option>
+							<option>Pinterest</option>
+							<option>TikTok</option>
+							<option>Behance</option>
+						</select>
+					</label>
+					<label class="field">
+						<span>Content type</span>
+						<select name="contentType" data-strategy-input>
+							<option>Reels & Shorts</option>
+							<option>Long-form video</option>
+							<option>Carousels</option>
+							<option>Photos</option>
+							<option>Blogs & Articles</option>
+							<option>Live streams</option>
+						</select>
+					</label>
+					<div class="field posts-per-week-field">
+						<div class="ppw-header">
+							<span class="ppw-label">Posts per week</span>
+							<span class="ppw-count"><strong data-posts-value>4</strong></span>
+						</div>
+						<div class="ppw-slider-wrap">
+							<input type="range" name="postsPerWeek" min="1" max="7" value="4" class="ppw-slider" data-strategy-input data-posts-range>
+							<div class="ppw-slider-labels">
+								<span>1</span>
+								<span>2</span>
+								<span>3</span>
+								<span>4</span>
+								<span>5</span>
+								<span>6</span>
+								<span>7</span>
+							</div>
+						</div>
+						<span class="ppw-pace" data-posts-pace>Steady pace</span>
+					</div>
+					<button class="primary-button" type="submit">Generate ideas</button>
+				</form>
+			</div>
+
+			<div class="advisor-output">
+				<div class="panel-card__header advisor-output__header">
+					<h2>Suggested for you</h2>
+					<p data-advisor-context>Ideas tuned to your platform and pace.</p>
+				</div>
+				<div class="masonry" data-suggestion-grid></div>
+			</div>
+		</section>
+
+		<section class="list-section">
+			<div class="panel-card__header list-section__header">
+				<h2>Your best performing content</h2>
+				<p>What's been resonating with your audience lately.</p>
+			</div>
+			<div class="best-content" data-best-content></div>
+		</section>
+
+		<footer class="site-footer">
+			<div class="site-footer__brand">
+				<img src="logo_transparent.png" alt="CreatorSetu" class="brand-logo">
+			</div>
+			<p class="site-footer__text">Built for student creators who dream big and start small.</p>
+			<div class="site-footer__links">
+				<a href="index.html">Dashboard</a>
+				<a href="earnings.html">Earnings</a>
+				<a href="budget.html">Budget</a>
+				<a href="strategy.html">Strategy</a>
+				<a href="community.html">Community</a>
+				<a href="kredit.html">Kredit</a>
+			</div>
+		</footer>
+	</main>
+
+	<script src="strategy.js"></script>
+</body>
+</html>

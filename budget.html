@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CreatorSetu | Budget Planner</title>
+	<meta name="description" content="Plan your monthly budget and track savings with CreatorSetu.">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<main class="page">
+		<header class="page__nav">
+			<div class="page__brand">
+				<img class="brand-logo brand-logo--dashboard" src="logo_transparent.png" alt="CreatorSetu Logo">
+			</div>
+			<nav class="page__links" aria-label="Primary">
+				<a href="index.html">Dashboard</a>
+				<a href="earnings.html">Earnings</a>
+				<a href="budget.html" class="is-active" aria-current="page">Budget</a>
+				<a href="strategy.html">Strategy</a>
+				<a href="community.html">Community</a>
+				<a href="kredit.html" class="kredit-nav-link"><span class="kredit-icon">₹</span> Kredit</a>
+			</nav>
+			<button class="mobile-menu-toggle" data-mobile-menu-toggle aria-label="Toggle mobile menu" aria-expanded="false">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+			<nav class="mobile-nav-menu" data-mobile-nav-menu aria-label="Mobile navigation">
+				<a href="index.html">Dashboard</a>
+				<a href="earnings.html">Earnings</a>
+				<a href="budget.html" class="is-active" aria-current="page">Budget</a>
+				<a href="strategy.html">Strategy</a>
+				<a href="community.html">Community</a>
+				<a href="kredit.html">Kredit</a>
+			</nav>
+			<div class="dashboard__profile" aria-label="Profile">
+				<span>AK</span>
+			</div>
+		</header>
+
+		<section class="page__intro">
+			<p class="eyebrow">Budget planner</p>
+			<h1>Plan your month with clarity</h1>
+			<p class="page__lead">Set your income, map out your expenses, and see how much you can save — all in one soft, simple view.</p>
+		</section>
+
+		<section class="content-grid">
+			<div class="panel-card">
+				<div class="panel-card__header">
+					<h2>Monthly inputs</h2>
+					<p>Update any value to refresh your plan.</p>
+				</div>
+				<form class="stack-form" data-budget-form novalidate>
+					<label class="field">
+						<span>Monthly income (₹)</span>
+						<input type="number" name="income" placeholder="e.g. 25000" min="0" step="1" data-budget-input value="25000">
+					</label>
+					<div class="field-divider" aria-hidden="true"></div>
+					<label class="field">
+						<span>Hostel</span>
+						<input type="number" name="Hostel" placeholder="0" min="0" step="1" data-budget-input value="8000">
+					</label>
+					<label class="field">
+						<span>Food</span>
+						<input type="number" name="Food" placeholder="0" min="0" step="1" data-budget-input value="5000">
+					</label>
+					<label class="field">
+						<span>Travel</span>
+						<input type="number" name="Travel" placeholder="0" min="0" step="1" data-budget-input value="2000">
+					</label>
+					<label class="field">
+						<span>College Fees</span>
+						<input type="number" name="College Fees" placeholder="0" min="0" step="1" data-budget-input value="4000">
+					</label>
+					<label class="field">
+						<span>Other</span>
+						<input type="number" name="Other" placeholder="0" min="0" step="1" data-budget-input value="1500">
+					</label>
+				</form>
+			</div>
+
+			<div class="panel-card budget-overview">
+				<div class="panel-card__header">
+					<h2>Budget summary</h2>
+					<p>Income, expenses, and what you keep.</p>
+				</div>
+				<div class="summary-trio">
+					<div class="summary-trio__item summary-trio__item--income">
+						<span>Total Income</span>
+						<strong data-summary-income>₹0</strong>
+					</div>
+					<div class="summary-trio__item summary-trio__item--expense">
+						<span>Total Expenses</span>
+						<strong data-summary-expenses>₹0</strong>
+					</div>
+					<div class="summary-trio__item summary-trio__item--savings">
+						<span>Savings</span>
+						<strong data-summary-savings>₹0</strong>
+					</div>
+				</div>
+				<div class="savings-meter">
+					<div class="savings-meter__head">
+						<span>Savings rate</span>
+						<span data-savings-rate>0%</span>
+					</div>
+					<div class="progress-bar"><span data-savings-bar style="width: 0%"></span></div>
+				</div>
+
+				<div class="category-progress">
+					<h3>Expense breakdown</h3>
+					<div data-category-bars></div>
+				</div>
+			</div>
+		</section>
+
+		<section class="tip-section">
+			<article class="ai-tip-card">
+				<div class="ai-tip-card__icon" aria-hidden="true">💡</div>
+				<div class="ai-tip-card__body">
+					<p class="ai-tip-card__label">AI budgeting tip</p>
+					<p class="ai-tip-card__text" data-ai-tip>Enter your numbers to get a personalized suggestion.</p>
+				</div>
+			</article>
+		</section>
+
+		<footer class="site-footer">
+			<div class="site-footer__brand">
+				<img src="logo_transparent.png" alt="CreatorSetu" class="brand-logo">
+			</div>
+			<p class="site-footer__text">Built for student creators who dream big and start small.</p>
+			<div class="site-footer__links">
+				<a href="index.html">Dashboard</a>
+				<a href="earnings.html">Earnings</a>
+				<a href="budget.html">Budget</a>
+				<a href="strategy.html">Strategy</a>
+				<a href="community.html">Community</a>
+				<a href="kredit.html">Kredit</a>
+			</div>
+		</footer>
+	</main>
+
+	<script src="budget.js"></script>
+</body>
+</html>

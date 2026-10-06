@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CreatorSetu | Earnings Tracker</title>
+	<meta name="description" content="Track your creator earnings across platforms with CreatorSetu.">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<main class="page">
+		<header class="page__nav">
+			<div class="page__brand">
+				<img class="brand-logo brand-logo--dashboard" src="logo_transparent.png" alt="CreatorSetu Logo">
+			</div>
+			<nav class="page__links" aria-label="Primary">
+				<a href="index.html">Dashboard</a>
+				<a href="earnings.html" class="is-active" aria-current="page">Earnings</a>
+				<a href="budget.html">Budget</a>
+				<a href="strategy.html">Strategy</a>
+				<a href="community.html">Community</a>
+				<a href="kredit.html" class="kredit-nav-link"><span class="kredit-icon">₹</span> Kredit</a>
+			</nav>
+			<button class="mobile-menu-toggle" data-mobile-menu-toggle aria-label="Toggle mobile menu" aria-expanded="false">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+			<nav class="mobile-nav-menu" data-mobile-nav-menu aria-label="Mobile navigation">
+				<a href="index.html">Dashboard</a>
+				<a href="earnings.html" class="is-active" aria-current="page">Earnings</a>
+				<a href="budget.html">Budget</a>
+				<a href="strategy.html">Strategy</a>
+				<a href="community.html">Community</a>
+				<a href="kredit.html">Kredit</a>
+			</nav>
+			<div class="dashboard__profile" aria-label="Profile">
+				<span>AK</span>
+			</div>
+		</header>
+
+		<section class="page__intro">
+			<p class="eyebrow">Earnings tracker</p>
+			<h1>Every payout, in one calm place</h1>
+			<p class="page__lead">Log what you earn across platforms, see your totals at a glance, and watch your creator income grow over time.</p>
+		</section>
+
+		<section class="summary-row" aria-label="Earnings summary">
+			<article class="summary-card summary-card--hero">
+				<p>Total Earnings</p>
+				<strong data-total-earnings>₹0</strong>
+				<span data-total-count>No earnings logged yet</span>
+			</article>
+			<article class="summary-card">
+				<p>Top Platform</p>
+				<strong data-top-platform>—</strong>
+				<span data-top-platform-amount>Add an entry to see your leader</span>
+			</article>
+			<article class="summary-card">
+				<p>Latest Entry</p>
+				<strong data-latest-amount>—</strong>
+				<span data-latest-meta>Your most recent payout shows here</span>
+			</article>
+		</section>
+
+		<section class="content-grid">
+			<div class="panel-card">
+				<div class="panel-card__header">
+					<h2>Add earning</h2>
+					<p>Record a new payout in seconds.</p>
+				</div>
+				<form class="stack-form" data-earning-form novalidate>
+					<label class="field">
+						<span>Platform name</span>
+						<input type="text" name="platform" placeholder="e.g. Instagram" autocomplete="off" required>
+					</label>
+					<label class="field">
+						<span>Amount (₹)</span>
+						<input type="number" name="amount" placeholder="e.g. 4500" min="0" step="1" required>
+					</label>
+					<label class="field">
+						<span>Date</span>
+						<input type="date" name="date" required>
+					</label>
+					<label class="field">
+						<span>Category</span>
+						<select name="category" required>
+							<option value="">Select a category</option>
+							<option>Sponsorship</option>
+							<option>Affiliate</option>
+							<option>Ad Revenue</option>
+							<option>Product Sales</option>
+							<option>Tips & Donations</option>
+							<option>Other</option>
+						</select>
+					</label>
+					<button class="primary-button" type="submit">Add earning</button>
+				</form>
+			</div>
+
+			<div class="panel-card">
+				<div class="panel-card__header">
+					<h2>Breakdown by platform</h2>
+					<p>Where your income comes from.</p>
+				</div>
+				<div class="pie-wrap">
+					<div class="pie-chart" data-pie-chart role="img" aria-label="Earnings breakdown by platform"></div>
+					<ul class="pie-legend" data-pie-legend></ul>
+				</div>
+			</div>
+		</section>
+
+		<section class="list-section">
+			<div class="panel-card__header list-section__header">
+				<h2>All earnings</h2>
+				<p>Sorted by date, most recent first.</p>
+			</div>
+			<div class="earnings-grid" data-earnings-grid></div>
+			<p class="empty-state" data-empty-state hidden>No earnings yet. Add your first payout using the form above.</p>
+		</section>
+
+		<footer class="site-footer">
+			<div class="site-footer__brand">
+				<img src="logo_transparent.png" alt="CreatorSetu" class="brand-logo">
+			</div>
+			<p class="site-footer__text">Built for student creators who dream big and start small.</p>
+			<div class="site-footer__links">
+				<a href="index.html">Dashboard</a>
+				<a href="earnings.html">Earnings</a>
+				<a href="budget.html">Budget</a>
+				<a href="strategy.html">Strategy</a>
+				<a href="community.html">Community</a>
+				<a href="kredit.html">Kredit</a>
+			</div>
+		</footer>
+	</main>
+
+	<script src="earnings.js"></script>
+</body>
+</html>

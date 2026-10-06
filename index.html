@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CreatorSetu | Login</title>
+	<meta name="description" content="CreatorSetu login and signup experience with a warm split-screen interface.">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<main class="auth-shell" data-auth-shell>
+		<section class="auth-visual" aria-label="CreatorSetu introduction">
+			<div class="auth-visual__brand">
+				<img class="brand-logo brand-logo--panel" src="logo_transparent.png" alt="CreatorSetu Logo">
+			</div>
+
+			<div class="auth-visual__content">
+				<h1>Bridge Your Creator Journey</h1>
+				<p class="auth-visual__text">
+					A calm space for creators to organize ideas, unlock opportunities, and move from inspiration to action with clarity.
+				</p>
+
+				<div class="auth-illustration" aria-hidden="true">
+					<div class="auth-illustration__card auth-illustration__card--one"></div>
+					<div class="auth-illustration__card auth-illustration__card--two"></div>
+					<div class="auth-illustration__card auth-illustration__card--three"></div>
+					<div class="auth-illustration__orb auth-illustration__orb--one"></div>
+					<div class="auth-illustration__orb auth-illustration__orb--two"></div>
+				</div>
+			</div>
+		</section>
+
+		<section class="auth-panel" aria-label="Authentication forms">
+			<div class="auth-card" data-auth-card data-mode="login">
+				<div class="auth-card__header">
+					<p class="eyebrow">Welcome back</p>
+					<h2>Sign in to CreatorSetu</h2>
+					<p class="auth-card__copy">Use your account to continue building your creator journey.</p>
+				</div>
+
+				<div class="auth-switch" role="tablist" aria-label="Authentication mode">
+					<button class="auth-switch__button is-active" type="button" data-mode-button="login" aria-pressed="true">Login</button>
+					<button class="auth-switch__button" type="button" data-mode-button="signup" aria-pressed="false">Sign Up</button>
+				</div>
+
+				<div class="auth-stage">
+					<form class="auth-form is-active" data-form="login" novalidate>
+						<label class="field">
+							<span>Email</span>
+							<input type="email" name="loginEmail" placeholder="creator@example.com" autocomplete="email">
+						</label>
+						<label class="field">
+							<span>Password</span>
+							<input type="password" name="loginPassword" placeholder="Enter your password" autocomplete="current-password">
+						</label>
+						<p class="auth-error" data-auth-error hidden></p>
+						<button class="primary-button" type="submit" data-submit-button>Login</button>
+						<button class="google-button" type="button">
+							<span class="google-button__icon">G</span>
+							Sign in with Google
+						</button>
+						<p class="auth-footnote">
+							Don't have an account?
+							<button class="text-toggle" type="button" data-mode-button="signup">Sign Up</button>
+						</p>
+					</form>
+
+					<form class="auth-form" data-form="signup" novalidate>
+						<label class="field">
+							<span>Name</span>
+							<input type="text" name="signupName" placeholder="Your name" autocomplete="name">
+						</label>
+						<label class="field">
+							<span>Email</span>
+							<input type="email" name="signupEmail" placeholder="creator@example.com" autocomplete="email">
+						</label>
+						<label class="field">
+							<span>Password</span>
+							<input type="password" name="signupPassword" placeholder="Create a password" autocomplete="new-password">
+						</label>
+						<label class="field">
+							<span>Platform</span>
+							<select name="platform">
+								<option value="">Select your platform</option>
+								<option>Instagram</option>
+								<option>YouTube</option>
+								<option>Pinterest</option>
+								<option>TikTok</option>
+								<option>Behance</option>
+							</select>
+						</label>
+						<p class="auth-error" data-auth-error hidden></p>
+						<button class="primary-button" type="submit" data-submit-button>Create Account</button>
+						<button class="google-button" type="button">
+							<span class="google-button__icon">G</span>
+							Sign up with Google
+						</button>
+						<p class="auth-footnote">
+							Already have an account?
+							<button class="text-toggle" type="button" data-mode-button="login">Login</button>
+						</p>
+					</form>
+				</div>
+			</div>
+		</section>
+
+		<section class="dashboard" data-dashboard hidden aria-label="CreatorSetu dashboard">
+			<header class="dashboard__nav">
+				<div class="dashboard__brand">
+					<img class="brand-logo brand-logo--dashboard" src="logo_transparent.png" alt="CreatorSetu Logo">
+				</div>
+				<nav class="page__links dashboard__links" aria-label="Primary">
+					<a href="index.html" class="is-active" aria-current="page">Dashboard</a>
+					<a href="earnings.html">Earnings</a>
+					<a href="budget.html">Budget</a>
+					<a href="strategy.html">Strategy</a>
+					<a href="community.html">Community</a>
+					<a href="kredit.html" class="kredit-nav-link"><span class="kredit-icon">₹</span> Kredit</a>
+				</nav>
+				<button class="mobile-menu-toggle" data-mobile-menu-toggle aria-label="Toggle mobile menu" aria-expanded="false">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+				<nav class="mobile-nav-menu" data-mobile-nav-menu aria-label="Mobile navigation">
+					<a href="index.html" class="is-active" aria-current="page">Dashboard</a>
+					<a href="earnings.html">Earnings</a>
+					<a href="budget.html">Budget</a>
+					<a href="strategy.html">Strategy</a>
+					<a href="community.html">Community</a>
+					<a href="kredit.html">Kredit</a>
+				</nav>
+				<div class="dashboard__profile" aria-label="Profile">
+					<span data-profile-initials>AK</span>
+				</div>
+			</header>
+
+			<section class="dashboard__banner">
+				<div>
+					<p class="eyebrow">Creator dashboard</p>
+					<h2>Welcome back, <span data-welcome-name>Aanya</span></h2>
+					<p>Track your earnings, see your impact, and keep your creator journey moving forward with clarity.</p>
+				</div>
+				<div class="dashboard__banner-card">
+					<span>Next milestone</span>
+					<strong>Brand collab review in 2 days</strong>
+				</div>
+			</section>
+
+			<section class="dashboard__stats" aria-label="Earnings and impact summary">
+				<article class="stat-card stat-card--dashboard">
+					<p>Total Earnings</p>
+					<strong>₹12,480</strong>
+					<span>+18% from last quarter</span>
+				</article>
+				<article class="stat-card stat-card--dashboard">
+					<p>This Month Earnings</p>
+					<strong>₹3,240</strong>
+					<span>On track with goals</span>
+				</article>
+				<article class="stat-card stat-card--dashboard">
+					<p>Savings Goal Progress</p>
+					<strong>68%</strong>
+					<div class="progress-bar" aria-hidden="true"><span style="width: 68%"></span></div>
+				</article>
+				<article class="stat-card stat-card--dashboard">
+					<p>Impact Donated</p>
+					<strong>₹860</strong>
+					<span>Shared across creator initiatives</span>
+				</article>
+			</section>
+
+			<section class="dashboard__grid">
+				<div class="dashboard-card dashboard-card--chart">
+					<div class="dashboard-card__header">
+						<h3>Earnings Bar Chart</h3>
+						<p>Last six months performance</p>
+					</div>
+					<div class="bar-chart" data-bar-chart aria-label="Earnings chart"></div>
+				</div>
+
+				<div class="dashboard-card dashboard-card--activity">
+					<div class="dashboard-card__header">
+						<h3>Recent Activity</h3>
+						<p>Latest creator updates</p>
+					</div>
+					<div class="activity-feed" data-activity-feed></div>
+				</div>
+			</section>
+		</section>
+	</main>
+
+	<script src="scrypt.js"></script>
+</body>
+</html>

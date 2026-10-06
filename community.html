@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CreatorSetu | Creator Meet</title>
+	<meta name="description" content="Find and connect with other student creators on CreatorSetu.">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<main class="page">
+		<header class="page__nav">
+			<div class="page__brand">
+				<img class="brand-logo brand-logo--dashboard" src="logo_transparent.png" alt="CreatorSetu Logo">
+			</div>
+			<nav class="page__links" aria-label="Primary">
+				<a href="index.html">Dashboard</a>
+				<a href="earnings.html">Earnings</a>
+				<a href="budget.html">Budget</a>
+				<a href="strategy.html">Strategy</a>
+				<a href="community.html" class="is-active" aria-current="page">Community</a>
+				<a href="kredit.html" class="kredit-nav-link"><span class="kredit-icon">₹</span> Kredit</a>
+			</nav>
+			<button class="mobile-menu-toggle" data-mobile-menu-toggle aria-label="Toggle mobile menu" aria-expanded="false">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+			<nav class="mobile-nav-menu" data-mobile-nav-menu aria-label="Mobile navigation">
+				<a href="index.html">Dashboard</a>
+				<a href="earnings.html">Earnings</a>
+				<a href="budget.html">Budget</a>
+				<a href="strategy.html">Strategy</a>
+				<a href="community.html" class="is-active" aria-current="page">Community</a>
+				<a href="kredit.html">Kredit</a>
+			</nav>
+			<div class="dashboard__profile" aria-label="Profile">
+				<span>AK</span>
+			</div>
+		</header>
+
+		<section class="page__intro">
+			<p class="eyebrow">Creator meet</p>
+			<h1>Find your people, build together</h1>
+			<p class="page__lead">Discover student creators across platforms, send a connect, and team up on collabs that grow you both.</p>
+		</section>
+
+		<div class="search-wrap">
+			<span class="search-wrap__icon" aria-hidden="true">🔎</span>
+			<input type="search" class="search-input" placeholder="Search creators by name or platform…" data-creator-search aria-label="Search creators">
+		</div>
+
+		<section class="community-layout">
+			<div class="community-main">
+				<div class="panel-card__header">
+					<h2>Student creators</h2>
+					<p>People on CreatorSetu you might vibe with.</p>
+				</div>
+				<div class="creator-grid" data-creator-grid></div>
+				<p class="empty-state" data-creator-empty hidden>No creators match your search yet.</p>
+
+				<div class="panel-card__header collab-heading">
+					<h2>Collaborate</h2>
+					<p>Open collaboration requests from the community.</p>
+				</div>
+				<div class="masonry" data-collab-grid></div>
+			</div>
+
+			<aside class="community-aside" aria-label="Trending topics">
+				<div class="panel-card trending-card">
+					<div class="panel-card__header">
+						<h2>Trending topics</h2>
+						<p>What creators are talking about.</p>
+					</div>
+					<ul class="trending-list" data-trending-list></ul>
+				</div>
+			</aside>
+		</section>
+
+		<footer class="site-footer">
+			<div class="site-footer__brand">
+				<img src="logo_transparent.png" alt="CreatorSetu" class="brand-logo">
+			</div>
+			<p class="site-footer__text">Built for student creators who dream big and start small.</p>
+			<div class="site-footer__links">
+				<a href="index.html">Dashboard</a>
+				<a href="earnings.html">Earnings</a>
+				<a href="budget.html">Budget</a>
+				<a href="strategy.html">Strategy</a>
+				<a href="community.html">Community</a>
+				<a href="kredit.html">Kredit</a>
+			</div>
+		</footer>
+	</main>
+
+	<script src="community.js"></script>
+</body>
+</html>

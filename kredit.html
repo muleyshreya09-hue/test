@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CreatorSetu | Kredit</title>
+	<meta name="description" content="Peer-to-peer micro lending for student creators on CreatorSetu.">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<main class="page">
+		<header class="page__nav">
+			<div class="page__brand">
+				<img class="brand-logo brand-logo--dashboard" src="logo_transparent.png" alt="CreatorSetu Logo">
+			</div>
+			<nav class="page__links" aria-label="Primary">
+				<a href="index.html">Dashboard</a>
+				<a href="earnings.html">Earnings</a>
+				<a href="budget.html">Budget</a>
+				<a href="strategy.html">Strategy</a>
+				<a href="community.html">Community</a>
+				<a href="kredit.html" class="kredit-nav-link is-active" aria-current="page"><span class="kredit-icon">&#8377;</span> Kredit</a>
+			</nav>
+			<button class="mobile-menu-toggle" data-mobile-menu-toggle aria-label="Toggle mobile menu" aria-expanded="false">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+			<nav class="mobile-nav-menu" data-mobile-nav-menu aria-label="Mobile navigation">
+				<a href="index.html">Dashboard</a>
+				<a href="earnings.html">Earnings</a>
+				<a href="budget.html">Budget</a>
+				<a href="strategy.html">Strategy</a>
+				<a href="community.html">Community</a>
+				<a href="kredit.html" class="is-active" aria-current="page">Kredit</a>
+			</nav>
+			<div class="dashboard__profile" aria-label="Profile">
+				<span>AK</span>
+			</div>
+		</header>
+
+		<section class="kredit-hero">
+			<p class="eyebrow kredit-hero__eyebrow">Kredit</p>
+			<h1 class="kredit-hero__title">Grow Together, Lend Together</h1>
+			<p class="kredit-hero__subtitle">Peer-to-peer micro lending built for student creators. Support fellow creators or get the funding you need to grow.</p>
+		</section>
+
+		<section class="kredit-toggle-wrap">
+			<div class="kredit-toggle" role="tablist" aria-label="Kredit mode">
+				<button class="kredit-toggle__btn is-active" type="button" data-kredit-mode="lend" aria-pressed="true">Lend</button>
+				<button class="kredit-toggle__btn" type="button" data-kredit-mode="borrow" aria-pressed="false">Borrow</button>
+			</div>
+		</section>
+
+		<section class="kredit-panel" data-kredit-panel="lend" aria-label="Lending opportunities">
+			<div class="panel-card__header">
+				<h2>Available loan requests</h2>
+				<p>Support a fellow creator by funding their request.</p>
+			</div>
+			<div class="kredit-request-grid" data-loan-requests></div>
+		</section>
+
+		<section class="kredit-panel kredit-panel--hidden" data-kredit-panel="borrow" aria-label="Borrow form">
+			<div class="panel-card kredit-borrow-card">
+				<div class="panel-card__header">
+					<h2>Request a micro loan</h2>
+					<p>Tell us what you need and why. Our community is here for you.</p>
+				</div>
+				<form class="stack-form" data-borrow-form novalidate>
+					<label class="field">
+						<span>Amount needed (&#8377;)</span>
+						<input type="number" name="amount" placeholder="e.g. 2000" min="100" max="25000" step="100" required>
+					</label>
+					<label class="field">
+						<span>Purpose</span>
+						<select name="purpose" required>
+							<option value="">Select a purpose</option>
+							<option>Equipment upgrade</option>
+							<option>Software subscription</option>
+							<option>Course or workshop</option>
+							<option>Content production</option>
+							<option>Marketing &amp; ads</option>
+							<option>Emergency fund</option>
+							<option>Other</option>
+						</select>
+					</label>
+					<label class="field">
+						<span>Tell us more</span>
+						<textarea name="description" placeholder="Briefly describe what the funds will help you achieve..." rows="3" class="kredit-textarea"></textarea>
+					</label>
+					<label class="field">
+						<span>Repayment timeline</span>
+						<select name="timeline" required>
+							<option value="">Select timeline</option>
+							<option>2 weeks</option>
+							<option>1 month</option>
+							<option>2 months</option>
+							<option>3 months</option>
+						</select>
+					</label>
+					<button class="primary-button" type="submit">Submit Request</button>
+				</form>
+			</div>
+		</section>
+
+		<section class="kredit-my-section">
+			<div class="panel-card__header">
+				<h2>My Kredit</h2>
+				<p>Your lending and borrowing activity at a glance.</p>
+			</div>
+
+			<div class="kredit-stats-row">
+				<article class="kredit-stat-card">
+					<p>Total Lent</p>
+					<strong data-kredit-lent>&#8377;4,500</strong>
+					<span>Across 3 creators</span>
+				</article>
+				<article class="kredit-stat-card">
+					<p>Active Loans</p>
+					<strong data-kredit-active>2</strong>
+					<span>Currently outstanding</span>
+				</article>
+				<article class="kredit-stat-card">
+					<p>Repayment Rate</p>
+					<strong data-kredit-rate>92%</strong>
+					<span>Community average</span>
+				</article>
+			</div>
+
+			<div class="kredit-loans-list" data-kredit-loans></div>
+		</section>
+
+		<section class="tip-section">
+			<article class="ai-tip-card kredit-tip-card">
+				<div class="ai-tip-card__icon" aria-hidden="true">&#128161;</div>
+				<div class="ai-tip-card__body">
+					<p class="ai-tip-card__label">AI lending tip</p>
+					<p class="ai-tip-card__text" data-kredit-tip>Based on community trends, creators investing in equipment upgrades have a 96% repayment rate. Consider supporting equipment-related requests for the safest returns.</p>
+				</div>
+			</article>
+		</section>
+
+		<footer class="site-footer">
+			<div class="site-footer__brand">
+				<img src="logo_transparent.png" alt="CreatorSetu" class="brand-logo">
+			</div>
+			<p class="site-footer__text">Built for student creators who dream big and start small.</p>
+			<div class="site-footer__links">
+				<a href="index.html">Dashboard</a>
+				<a href="earnings.html">Earnings</a>
+				<a href="budget.html">Budget</a>
+				<a href="strategy.html">Strategy</a>
+				<a href="community.html">Community</a>
+				<a href="kredit.html">Kredit</a>
+			</div>
+		</footer>
+	</main>
+
+	<script src="kredit.js"></script>
+</body>
+</html>
