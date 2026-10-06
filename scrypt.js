@@ -28,11 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	});
 });
 
-// Change this to wherever your backend actually runs.
-// While developing locally, this default (localhost:5000) matches
-// the CreatorSetu backend's default PORT.
-const API_BASE_URL = 'http://localhost:5000';
-
 const authShell = document.querySelector('[data-auth-shell]');
 const authCard = document.querySelector('[data-auth-card]');
 const dashboard = document.querySelector('[data-dashboard]');
@@ -243,14 +238,12 @@ function applyUserName(name) {
 	}
 }
 
-function showPostLogin(form, realName) {
+function showPostLogin(form) {
 	if (!authShell || !dashboard) {
 		return;
 	}
 
-	// Prefer the real name the backend sent back; fall back to guessing
-	// from the form only if that's ever missing.
-	applyUserName(realName || resolveName(form));
+	applyUserName(resolveName(form));
 
 	authShell.hidden = false;
 	authShell.classList.add('is-post-login');
@@ -260,112 +253,10 @@ function showPostLogin(form, realName) {
 	renderDashboard();
 }
 
-// Shows/hides the little red error message inside a given form
-function setFormError(form, message) {
-	const errorEl = form.querySelector('[data-auth-error]');
-	if (!errorEl) return;
-	if (message) {
-		errorEl.textContent = message;
-		errorEl.hidden = false;
-	} else {
-		errorEl.hidden = true;
-	}
-}
-
-// Disables the submit button and changes its text while a request is in flight,
-// so the user can't double-click and send two requests by accident.
-function setFormLoading(form, isLoading, loadingText, normalText) {
-	const btn = form.querySelector('[data-submit-button]');
-	if (!btn) return;
-	btn.disabled = isLoading;
-	btn.textContent = isLoading ? loadingText : normalText;
-}
-
-async function handleLoginSubmit(form) {
-	setFormError(form, null);
-	const email = form.querySelector('input[name="loginEmail"]').value.trim();
-	const password = form.querySelector('input[name="loginPassword"]').value;
-
-	if (!email || !password) {
-		setFormError(form, 'Please enter both your email and password.');
-		return;
-	}
-
-	setFormLoading(form, true, 'Logging in…', 'Login');
-	try {
-		const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ email, password }),
-		});
-		const data = await response.json();
-
-		if (!response.ok) {
-			// The backend sends back { error: "..." } when something's wrong
-			setFormError(form, data.error || 'Something went wrong. Please try again.');
-			return;
-		}
-
-		// Success! Save the token so future requests can prove who we are.
-		localStorage.setItem('creatorsetu_token', data.token);
-		localStorage.setItem('creatorsetu_user', JSON.stringify(data.user));
-		showPostLogin(form, data.user.name);
-	} catch (err) {
-		// This usually means the backend server isn't running at all
-		setFormError(form, 'Could not reach the server. Is the backend running?');
-	} finally {
-		setFormLoading(form, false, 'Logging in…', 'Login');
-	}
-}
-
-async function handleSignupSubmit(form) {
-	setFormError(form, null);
-	const name = form.querySelector('input[name="signupName"]').value.trim();
-	const email = form.querySelector('input[name="signupEmail"]').value.trim();
-	const password = form.querySelector('input[name="signupPassword"]').value;
-	const platform = form.querySelector('select[name="platform"]').value;
-
-	if (!name || !email || !password) {
-		setFormError(form, 'Please fill in your name, email, and password.');
-		return;
-	}
-	if (password.length < 6) {
-		setFormError(form, 'Password must be at least 6 characters.');
-		return;
-	}
-
-	setFormLoading(form, true, 'Creating account…', 'Create Account');
-	try {
-		const response = await fetch(`${API_BASE_URL}/api/auth/signup`, {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ name, email, password, platform }),
-		});
-		const data = await response.json();
-
-		if (!response.ok) {
-			setFormError(form, data.error || 'Something went wrong. Please try again.');
-			return;
-		}
-
-		localStorage.setItem('creatorsetu_token', data.token);
-		localStorage.setItem('creatorsetu_user', JSON.stringify(data.user));
-		showPostLogin(form, data.user.name);
-	} catch (err) {
-		setFormError(form, 'Could not reach the server. Is the backend running?');
-	} finally {
-		setFormLoading(form, false, 'Creating account…', 'Create Account');
-	}
-}
-
 authForms.forEach((form) => {
 	form.addEventListener('submit', (event) => {
 		event.preventDefault();
-		if (form.dataset.form === 'signup') {
-			handleSignupSubmit(form);
-		} else {
-			handleLoginSubmit(form);
-		}
+		showPostLogin(form);
 	});
 });
 
